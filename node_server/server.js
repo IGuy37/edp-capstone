@@ -5,10 +5,12 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 dotenv.config();
-//const mongoUrl = process.env.MONGO_DB_URL;
+const mongoUrl = process.env.MONGO_DB_URL;
 const flaskUrl = process.env.ML_SERVER_URL
-console.log(flaskUrl)
-//const dbName = process.env.MONGO_DB;
+const dbName = process.env.MONGO_DB;
+
+const client = await MongoClient.connect(mongoUrl);
+const db = client.db(dbName);
 
 const PORT = 3001;
 const app = express();
@@ -29,5 +31,11 @@ app.get('/', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+process.on('SIGINT', function() {
+  console.log('Shutting down the server.');
+  client.close();
+  process.exit();
 });
 

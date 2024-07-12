@@ -35,7 +35,7 @@ app.use(cors());
 
 app.get('/api', async (req, res) => {
     try {
-        const ml_response = await fetch(flaskUrl);
+        const ml_response = await fetch(`${flaskUrl}`);
         const json_response = await ml_response.json()
         res.json(json_response);
     } catch (err) {
@@ -55,15 +55,39 @@ app.post('/api/search', async (req, res) => {
     }
 });
 
+app.post('/api/prediction', async (req, res) => {
+    try {
+        const queryParams = req.query;
+        const ml_response = await fetch(`${flaskUrl}/prediction?job_title=${queryParams.job_title}&location=${queryParams.location}`);
+        const json_response = await ml_response.json()
+        res.json(json_response);
+    } catch (err) {
+        console.error("Error:", err);
+        res.status(500).send("Can't connect to ML server");
+    }
+});
+
+
+app.put('/api/register', async (req, res) => {
+    try{
+        const result = await collection.insertOne(req.body);
+        console.log(`New document created with _id: ${result.insertedId}`);
+        res.json(result)
+    } catch (err) {
+        console.error("Error:", err);
+        res.status(500).send("Can't register new user right now.");
+    }
+});
+
 
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-process.on('SIGINT', function() {
-  console.log('Shutting down the server.');
-  client.close();
-  process.exit();
+process.on('SIGINT', () => {
+    console.log('Shutting down the server.');
+    client.close();
+    process.exit();
 });
 

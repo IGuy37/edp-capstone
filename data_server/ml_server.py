@@ -8,24 +8,24 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
-#MODEL_FILENAME = "trained_model.pkl"
-#with open(MODEL_FILENAME, 'rb') as file:
-#    model : DecisionTreeClassifier = pickle.load(file)
+MODEL_FILENAME = "model.pkl"
+with open(MODEL_FILENAME, 'rb') as file:
+   model : DecisionTreeClassifier = pickle.load(file)
 
 @app.route('/')
 def say_hello():
     return jsonify({"prediction" : "Hello, World!"})
 
 @app.route('/predict',methods=["POST"])
-#def predict():
-#    data = request.get_json()
-#    job_title = data.get('job_title')
-#    location = data.get('location')
-#    print(job_title, " ", location)
-#    return jsonify({"salary" : 86000})
-def predictation(job_role,location):
-   model = joblib.load('model_1.pkl')
-   return model.predict([[job_role,location]])[0]
+def predict():
+    data = request.get_json()
+    print(data)
+    df = pd.DataFrame(data, index=[0])
+    X_test = pd.get_dummies(df[['job_role','location']])
+    prediction =  model.predict(X_test)
+    print(prediction)
+    return jsonify({"salary" : prediction[0]})
+
 
 def main():
     app.run()

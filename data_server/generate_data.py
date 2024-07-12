@@ -46,7 +46,7 @@ def generate_data():
     with(open(JSON_FILENAME, 'w')) as file:
         file.write(formatted_data)
 
-    print("Sucessful")
+    print("Successful")
     # client.close()
 
 if(__name__ == "__main__"):

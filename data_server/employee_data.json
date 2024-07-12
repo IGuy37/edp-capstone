@@ -1,16 +1,25 @@
 [
   {
     "id": 0,
+<<<<<<< HEAD
     "name": "Michael Garcia",
     "phone_number": "(362)639-9597x6274",
     "job_role": "CEO",
     "location": "Floydburgh",
     "salary": 62729,
+=======
+    "name": "Deanna Thomas",
+    "phone_number": "001-333-416-6748x81600",
+    "job_role": "Software Engineer",
+    "location": "Tashamouth",
+    "salary": 64026,
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "boss": null,
     "subordinates": []
   },
   {
     "id": 1,
+<<<<<<< HEAD
     "name": "Jennifer Johnston",
     "phone_number": "(757)548-0741",
     "job_role": "Sales",
@@ -26,10 +35,65 @@
     "job_role": "CEO",
     "location": "Lake Julia",
     "salary": 73541,
+=======
+    "name": "Todd Brown",
+    "phone_number": "333.929.9251x903",
+    "job_role": "Manager",
+    "location": "Cherylland",
+    "salary": 61084,
+    "boss": "Deanna Thomas",
+    "subordinates": [
+      "Charles Graham",
+      "Linda Gregory"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Charles Graham",
+    "phone_number": "503.363.2354x60398",
+    "job_role": "Manager",
+    "location": "South Shawn",
+    "salary": 72624,
+    "boss": "Todd Brown",
+    "subordinates": [
+      "Dennis Liu",
+      "Margaret Frazier",
+      "Susan Duffy"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Linda Gregory",
+    "phone_number": "566-611-7010",
+    "job_role": "HR",
+    "location": "New Michaelshire",
+    "salary": 84021,
+    "boss": "Todd Brown",
+    "subordinates": null
+  },
+  {
+    "id": 4,
+    "name": "Dennis Liu",
+    "phone_number": "+1-466-980-5028x387",
+    "job_role": "HR",
+    "location": "East Coleville",
+    "salary": 86036,
+    "boss": "Charles Graham",
+    "subordinates": null
+  },
+  {
+    "id": 5,
+    "name": "Aaron Jackson",
+    "phone_number": "683.526.4195x22992",
+    "job_role": "CEO",
+    "location": "Andrewshire",
+    "salary": 67465,
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "boss": null,
     "subordinates": []
   },
   {
+<<<<<<< HEAD
     "id": 3,
     "name": "Alicia Valencia",
     "phone_number": "409-937-1891",
@@ -111,29 +175,98 @@
     "salary": 85480,
     "boss": "Michael Garcia",
     "subordinates": null
+=======
+    "id": 6,
+    "name": "Herbert Fritz",
+    "phone_number": "001-492-918-2112",
+    "job_role": "Sales",
+    "location": "Brianmouth",
+    "salary": 99065,
+    "boss": "Aaron Jackson",
+    "subordinates": null
+  },
+  {
+    "id": 7,
+    "name": "Margaret Frazier",
+    "phone_number": "(744)887-2220x57904",
+    "job_role": "Sales",
+    "location": "Port Kristenmouth",
+    "salary": 67074,
+    "boss": "Charles Graham",
+    "subordinates": null
+  },
+  {
+    "id": 8,
+    "name": "Susan Duffy",
+    "phone_number": "001-273-843-5637x3215",
+    "job_role": "CyberSecurity engineer",
+    "location": "Ramirezstad",
+    "salary": 94222,
+    "boss": "Charles Graham",
+    "subordinates": null
+  },
+  {
+    "id": 9,
+    "name": "Christina Bates",
+    "phone_number": "001-270-737-1041x78922",
+    "job_role": "CEO",
+    "location": "Andrewstad",
+    "salary": 81265,
+    "boss": null,
+    "subordinates": []
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
+  },
+  {
+    "id": 10,
+    "name": "Charles Anderson",
+    "phone_number": "+1-395-841-7649x61817",
+    "job_role": "HR",
+    "location": "Romerohaven",
+    "salary": 77083,
+    "boss": "Deanna Thomas",
+    "subordinates": null
   },
   {
     "id": 11,
+<<<<<<< HEAD
     "name": "Ronald Michael",
     "phone_number": "001-966-845-3026x4237",
     "job_role": "CyberSecurity Engineer",
     "location": "Banksview",
     "salary": 91189,
     "boss": "Michelle Cannon DVM",
+=======
+    "name": "Christopher Jenkins",
+    "phone_number": "(737)878-3389x391",
+    "job_role": "CyberSecurity engineer",
+    "location": "Lake Jennifermouth",
+    "salary": 62018,
+    "boss": "Aaron Jackson",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 12,
+<<<<<<< HEAD
     "name": "Thomas Dean",
     "phone_number": "830-297-4699x17957",
     "job_role": "Software Engineer",
     "location": "Fullerland",
     "salary": 73903,
     "boss": "Ronald Michael",
+=======
+    "name": "Julie Smith",
+    "phone_number": "914.239.6821x2176",
+    "job_role": "Sales",
+    "location": "Suzannetown",
+    "salary": 81500,
+    "boss": "Christopher Jenkins",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 13,
+<<<<<<< HEAD
     "name": "Justin Jones",
     "phone_number": "(205)220-8036",
     "job_role": "Software Engineer",
@@ -150,50 +283,107 @@
     "location": "Chavezland",
     "salary": 92457,
     "boss": "Michelle Cannon DVM",
+=======
+    "name": "Alan Davis",
+    "phone_number": "(285)901-4286x326",
+    "job_role": "Manager",
+    "location": "South Paulberg",
+    "salary": 69523,
+    "boss": "Susan Duffy",
+    "subordinates": [
+      "Matthew Munoz"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Matthew Munoz",
+    "phone_number": "626.250.9341x308",
+    "job_role": "CyberSecurity engineer",
+    "location": "Harperview",
+    "salary": 84446,
+    "boss": "Alan Davis",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 15,
+<<<<<<< HEAD
     "name": "Cindy Ortega",
     "phone_number": "4432905039",
     "job_role": "CyberSecurity Engineer",
     "location": "East Brian",
     "salary": 60786,
     "boss": "Michelle Cannon DVM",
+=======
+    "name": "Helen English",
+    "phone_number": "565-428-3665",
+    "job_role": "CyberSecurity engineer",
+    "location": "Hilltown",
+    "salary": 89485,
+    "boss": "Susan Duffy",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 16,
+<<<<<<< HEAD
     "name": "Amy Olson",
     "phone_number": "924-323-4563x751",
     "job_role": "Software Engineer",
     "location": "Samanthafort",
     "salary": 66064,
     "boss": "Brandi Cabrera",
+=======
+    "name": "Christopher Reynolds",
+    "phone_number": "001-801-454-0537x10613",
+    "job_role": "Software Engineer",
+    "location": "Mortonton",
+    "salary": 94456,
+    "boss": "Julie Smith",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 17,
+<<<<<<< HEAD
     "name": "Eric Myers",
     "phone_number": "(271)784-7889x163",
     "job_role": "CyberSecurity Engineer",
     "location": "East Eric",
     "salary": 76817,
     "boss": "Amy Olson",
+=======
+    "name": "Heidi Wilson",
+    "phone_number": "593.511.7583",
+    "job_role": "Sales",
+    "location": "Hawkinsstad",
+    "salary": 75486,
+    "boss": "Linda Gregory",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 18,
+<<<<<<< HEAD
     "name": "Steven Fry",
     "phone_number": "251.355.7060x528",
     "job_role": "Sales",
     "location": "Blakeview",
     "salary": 79311,
     "boss": "Cindy Ortega",
+=======
+    "name": "Duane Rangel",
+    "phone_number": "001-428-736-1892",
+    "job_role": "HR",
+    "location": "North Anthonyville",
+    "salary": 88077,
+    "boss": "Dennis Liu",
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
     "subordinates": null
   },
   {
     "id": 19,
+<<<<<<< HEAD
     "name": "Scott Brown",
     "phone_number": "335.727.0032x255",
     "job_role": "CyberSecurity Engineer",
@@ -201,5 +391,14 @@
     "salary": 69380,
     "boss": "Michael Garcia",
     "subordinates": null
+=======
+    "name": "Gary Watkins",
+    "phone_number": "8309662044",
+    "job_role": "Manager",
+    "location": "Isaacfurt",
+    "salary": 73301,
+    "boss": "Duane Rangel",
+    "subordinates": []
+>>>>>>> 96b374a5ff75304346008b612fc7226293000450
   }
 ]

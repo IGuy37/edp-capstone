@@ -46,8 +46,10 @@ app.get('/api', async (req, res) => {
 
 app.post('/api/search', async (req, res) => {
     try{
-        const result = await collection.find(req.body).toArray()
-        res.json(result)
+        console.log(req.body);
+        const result = await collection.find(req.body).toArray();
+        console.log(result);
+        res.json(result);
     } catch (err) {
         console.error("Error:", err);
         res.status(500).send("Can't search right now.");
@@ -56,11 +58,11 @@ app.post('/api/search', async (req, res) => {
 
 app.post('/api/prediction', async (req, res) => {
     try {
-        const ml_response = await fetch(`${flaskUrl}/prediction`, {
+        const ml_response = await fetch(`${flaskUrl}/predict`, {
             "method" : "POST",
             "body" : req.body
         });
-        const json_response = await ml_response.json()
+        const json_response = await ml_response.json();
         res.json(json_response);
     } catch (err) {
         console.error("Error:", err);

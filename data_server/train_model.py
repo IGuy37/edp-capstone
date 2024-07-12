@@ -14,7 +14,7 @@ with open(FILENAME,'r') as file:
 
 dataframe = pd.DataFrame(data)
 
-X = pd.get_dummies(dataframe[['job_role','work_location']])
+X = pd.get_dummies(dataframe[['job_role','location']])
 y=dataframe['salary']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

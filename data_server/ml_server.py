@@ -17,7 +17,8 @@ def say_hello():
 @app.route('/predict',methods=["POST"])
 def predict():
     data = request.get_json()
-    df = pd.DataFrame(data)
+    print(data)
+    df = pd.DataFrame(data, index=[0])
     X_test = pd.get_dummies(df[['job_role','location']])
     prediction =  model.predict(X_test)
     print(prediction)

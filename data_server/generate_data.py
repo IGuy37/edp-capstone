@@ -16,7 +16,7 @@ def generate_data():
     # db = client[DB_NAME]
     # collection = db[COLLECTION_NAME]
 
-    job_roles = ['Software Engineer', 'CyberSecurity engineer', 'Manager', 'Sales','HR','CEO']
+    job_roles = ['Software Engineer', 'CyberSecurity Engineer', 'Manager', 'Sales','HR','CEO']
     JSON_FILENAME = "employee_data.json"
     employee_data = []
     for id in range(20):
@@ -29,7 +29,7 @@ def generate_data():
             'name':fake.name(),
             'phone_number':fake.phone_number(),
             'job_role':job_role,
-            'work_location':fake.address(),
+            'location':fake.city(),
             'salary': random.randint(60000, 100000),
             'boss': None if is_ceo else random.choice(employee_data)['name'] if employee_data else None,
             'subordinates':[] if is_manager or is_ceo else None

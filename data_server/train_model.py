@@ -14,7 +14,7 @@ with open(FILENAME,'r') as file:
 
 dataframe = pd.DataFrame(data)
 
-X = pd.get_dummies(dataframe[['job_role','work_location']])
+X = pd.get_dummies(dataframe[['job_role','location']])
 y=dataframe['salary']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -27,6 +27,32 @@ prediction = model.predict(X_test)
 filename = "model.pkl"
 with open(filename, 'wb') as file:
     pickle.dump(model, file)
+
+filename = "header_columns.pkl"
+with open(filename, 'wb') as file:
+    pickle.dump(dataframe.columns, file)
+
+new_data = pd.DataFrame([['Software Engineer','Hartford']],columns=['job_role','location'])
+new_data_encoded = pd.get_dummies(new_data)
+
+missing_cols =set(X.columns) -set(new_data_encoded.columns)
+for col in missing_cols:
+    new_data_encoded[col]=0
+
+new_data_encoded = new_data_encoded[X.columns]
+
+predict_salary = model.predict(new_data_encoded)
+
+print(predict_salary)
+
+
+
+
+
+#df = pd.DataFrame([['CEO','Hartford']],columns=['job_role','location'])
+#preds = model.predict(df)
+#print(preds)
+#print(df)
 
 
 

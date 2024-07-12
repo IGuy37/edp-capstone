@@ -19,8 +19,8 @@ app.use(cors());
 app.get('/', async (req, res) => {
     try {
         const ml_response = await fetch(flaskUrl);
-        console.log(ml_response.body)
-        res.json(ml_response.body);
+        const json_response = await ml_response.json()
+        res.json(json_response);
     } catch (err) {
         console.error("Error:", err);
         res.status(500).send("Can't connect to ML server");

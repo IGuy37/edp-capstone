@@ -16,7 +16,7 @@ def generate_data():
     # db = client[DB_NAME]
     # collection = db[COLLECTION_NAME]
 
-    job_roles = ['Software Enginer', 'CyberSecurity engineer', 'Manager', 'Sales','HR','CEO']
+    job_roles = ['Software Engineer', 'CyberSecurity engineer', 'Manager', 'Sales','HR','CEO']
     JSON_FILENAME = "employee_data.json"
     employee_data = []
     for id in range(20):

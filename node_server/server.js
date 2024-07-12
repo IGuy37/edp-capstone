@@ -46,8 +46,7 @@ app.get('/api', async (req, res) => {
 
 app.post('/api/search', async (req, res) => {
     try{
-        const queryParams = req.query;
-        const result = await collection.find(queryParams).toArray()
+        const result = await collection.find(req.body).toArray()
         res.json(result)
     } catch (err) {
         console.error("Error:", err);
@@ -57,8 +56,10 @@ app.post('/api/search', async (req, res) => {
 
 app.post('/api/prediction', async (req, res) => {
     try {
-        const queryParams = req.query;
-        const ml_response = await fetch(`${flaskUrl}/prediction?job_title=${queryParams.job_title}&location=${queryParams.location}`);
+        const ml_response = await fetch(`${flaskUrl}/prediction`, {
+            "method" : "POST",
+            "body" : req.body
+        });
         const json_response = await ml_response.json()
         res.json(json_response);
     } catch (err) {

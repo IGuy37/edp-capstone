@@ -2,6 +2,7 @@ import pandas as pd
 import pickle
 import pyarrow.parquet as pq
 from flask import Flask, jsonify, request
+
 from sklearn.tree import DecisionTreeClassifier
 
 app = Flask(__name__)
@@ -13,12 +14,13 @@ app = Flask(__name__)
 def say_hello():
     return jsonify({"prediction" : "Hello, World!"})
 
-@app.route('/predict')
+@app.route('/predict',methods=["POST"])
 def predict():
-    # Get values from query arguments
-    job_title = request.args.get('job_title')
-    location = request.args.get('location')
-    return jsonify({})
+    data = request.get_json()
+    job_title = data.get('job_title')
+    location = data.get('location')
+    print(job_title, " ", location)
+    return jsonify({"salary" : 86000})
 
 def main():
     app.run()

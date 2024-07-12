@@ -30,6 +30,7 @@ def generate_data():
             'phone_number':fake.phone_number(),
             'job_role':job_role,
             'work_location':fake.address(),
+            'salary': random.randint(60000, 100000),
             'boss': None if is_ceo else random.choice(employee_data)['name'] if employee_data else None,
             'subordinates':[] if is_manager or is_ceo else None
         }

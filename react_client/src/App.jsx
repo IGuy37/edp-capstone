@@ -17,14 +17,14 @@ export default function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/characters`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}`);
         if (!response.ok) {
           throw new Error('Data could not be fetched!');
         }
         const json_response = await response.json();
         setPrediction(json_response);
       } catch (error) {
-        console.error('Error fetching characters:', error);
+        console.error('Error fetching employees:', error);
       }
     };
 
@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <>
-      <Employee data={{}} />
+      <Employee data={prediction} />
     </>
   )
 }

@@ -6,9 +6,9 @@ from flask import Flask, jsonify, request
 from sklearn.tree import DecisionTreeClassifier
 
 app = Flask(__name__)
-#MODEL_FILENAME = "trained_model.pkl"
-#with open(MODEL_FILENAME, 'rb') as file:
-#    model : DecisionTreeClassifier = pickle.load(file)
+MODEL_FILENAME = "model.pkl"
+with open(MODEL_FILENAME, 'rb') as file:
+   model : DecisionTreeClassifier = pickle.load(file)
 
 @app.route('/')
 def say_hello():
@@ -17,10 +17,11 @@ def say_hello():
 @app.route('/predict',methods=["POST"])
 def predict():
     data = request.get_json()
-    job_title = data.get('job_title')
-    location = data.get('location')
-    print(job_title, " ", location)
-    return jsonify({"salary" : 86000})
+    df = pd.DataFrame(data)
+    X_test = pd.get_dummies(df[['job_role','location']])
+    prediction =  model.predict(X_test)
+    print(prediction)
+    return jsonify({"salary" : prediction[0]})
 
 def main():
     app.run()

@@ -5,9 +5,9 @@ from flask import Flask, jsonify
 from sklearn.tree import DecisionTreeClassifier
 
 app = Flask(__name__)
-MODEL_FILENAME = "trained_model.pkl"
-with open(MODEL_FILENAME, 'rb') as file:
-    model : DecisionTreeClassifier = pickle.load(file)
+#MODEL_FILENAME = "trained_model.pkl"
+#with open(MODEL_FILENAME, 'rb') as file:
+#    model : DecisionTreeClassifier = pickle.load(file)
 
 @app.route('/prediction')
 def prediction():

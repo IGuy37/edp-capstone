@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/prediction')
 def prediction():
-    return jsonify({"Prediction" : "Hello, World!"})
+    return jsonify({"prediction" : "Hello, World!"})
 
 def main():
     app.run()

@@ -58,7 +58,7 @@ app.post('/api/search', async (req, res) => {
 
 app.post('/api/prediction', async (req, res) => {
     try {
-        const ml_response = await fetch(`${flaskUrl}/prediction`, {
+        const ml_response = await fetch(`${flaskUrl}/predict`, {
             "method" : "POST",
             "body" : req.body
         });

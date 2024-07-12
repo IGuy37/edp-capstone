@@ -1,0 +1,184 @@
+[
+  {
+    "id": 0,
+    "name": "Stephanie Campbell",
+    "phone_number": "(665)686-3839x9382",
+    "job_role": "HR",
+    "work_location": "0036 Lauren Prairie Apt. 164\nCarolside, SD 35518",
+    "boss": null,
+    "subordinates": null
+  },
+  {
+    "id": 1,
+    "name": "Jorge Jones",
+    "phone_number": "402-559-5797",
+    "job_role": "CyberSecurity engineer",
+    "work_location": "647 Amanda Greens\nPort Robertchester, WV 71667",
+    "boss": "Stephanie Campbell",
+    "subordinates": null
+  },
+  {
+    "id": 2,
+    "name": "Jason Cox",
+    "phone_number": "751.271.7354x001",
+    "job_role": "HR",
+    "work_location": "USNS Gomez\nFPO AP 53853",
+    "boss": "Jorge Jones",
+    "subordinates": null
+  },
+  {
+    "id": 3,
+    "name": "Juan Morton",
+    "phone_number": "918-562-8350x661",
+    "job_role": "Software Enginer",
+    "work_location": "Unit 3470 Box 3137\nDPO AP 37056",
+    "boss": "Jorge Jones",
+    "subordinates": null
+  },
+  {
+    "id": 4,
+    "name": "Jessica Ryan",
+    "phone_number": "+1-438-500-3289x32526",
+    "job_role": "Sales",
+    "work_location": "6234 Andrew Ranch\nJohnsonmouth, MP 59393",
+    "boss": "Juan Morton",
+    "subordinates": null
+  },
+  {
+    "id": 5,
+    "name": "Mitchell Cruz",
+    "phone_number": "(471)748-4840x993",
+    "job_role": "CyberSecurity engineer",
+    "work_location": "294 Denise Crescent\nNorth Samuelshire, UT 73277",
+    "boss": "Juan Morton",
+    "subordinates": null
+  },
+  {
+    "id": 6,
+    "name": "Joseph Johnson",
+    "phone_number": "+1-591-206-6750x41783",
+    "job_role": "Manager",
+    "work_location": "USNS Hall\nFPO AE 14612",
+    "boss": "Mitchell Cruz",
+    "subordinates": [
+      "Karen Washington"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Dave Stevens",
+    "phone_number": "001-965-835-7845x27437",
+    "job_role": "Manager",
+    "work_location": "7553 Knight Isle Apt. 198\nWest Markberg, GU 94483",
+    "boss": "Stephanie Campbell",
+    "subordinates": []
+  },
+  {
+    "id": 8,
+    "name": "Anthony Barnes",
+    "phone_number": "412-685-5320",
+    "job_role": "HR",
+    "work_location": "1362 Teresa Extensions\nEdwardsshire, UT 45218",
+    "boss": "Jason Cox",
+    "subordinates": null
+  },
+  {
+    "id": 9,
+    "name": "Amy Morales",
+    "phone_number": "001-664-883-2679x84065",
+    "job_role": "Sales",
+    "work_location": "3910 Allen Crescent Apt. 979\nEast Kelliton, PR 70486",
+    "boss": "Anthony Barnes",
+    "subordinates": null
+  },
+  {
+    "id": 10,
+    "name": "Karen Washington",
+    "phone_number": "5418748339",
+    "job_role": "Software Enginer",
+    "work_location": "2579 John Point\nWest Shaneberg, NH 12790",
+    "boss": "Joseph Johnson",
+    "subordinates": null
+  },
+  {
+    "id": 11,
+    "name": "Michael Harris",
+    "phone_number": "+1-579-342-2816x97664",
+    "job_role": "CyberSecurity engineer",
+    "work_location": "USCGC Hoover\nFPO AA 88733",
+    "boss": "Amy Morales",
+    "subordinates": null
+  },
+  {
+    "id": 12,
+    "name": "Kristen Evans",
+    "phone_number": "755-760-8179x920",
+    "job_role": "CyberSecurity engineer",
+    "work_location": "09472 Spencer Point Suite 801\nMelindamouth, HI 15195",
+    "boss": "Amy Morales",
+    "subordinates": null
+  },
+  {
+    "id": 13,
+    "name": "Ian Long",
+    "phone_number": "857.405.7011x0644",
+    "job_role": "CEO",
+    "work_location": "606 James Divide\nEast Manuel, PW 61494",
+    "boss": null,
+    "subordinates": []
+  },
+  {
+    "id": 14,
+    "name": "Kayla Robinson",
+    "phone_number": "001-232-366-0619x0131",
+    "job_role": "Manager",
+    "work_location": "7682 Hicks Unions\nWest Stephenbury, NC 02027",
+    "boss": "Michael Harris",
+    "subordinates": []
+  },
+  {
+    "id": 15,
+    "name": "Melissa Liu",
+    "phone_number": "871.316.6894x48584",
+    "job_role": "HR",
+    "work_location": "PSC 5284, Box 6557\nAPO AP 62464",
+    "boss": "Michael Harris",
+    "subordinates": null
+  },
+  {
+    "id": 16,
+    "name": "Louis King V",
+    "phone_number": "3718662483",
+    "job_role": "CEO",
+    "work_location": "8377 Ricky Way Suite 661\nMeltonchester, PA 99919",
+    "boss": null,
+    "subordinates": []
+  },
+  {
+    "id": 17,
+    "name": "Nicole Hansen",
+    "phone_number": "001-454-994-2605",
+    "job_role": "HR",
+    "work_location": "88416 Kevin Cliffs Apt. 905\nSouth Craig, WI 88357",
+    "boss": "Jason Cox",
+    "subordinates": null
+  },
+  {
+    "id": 18,
+    "name": "Debra Torres",
+    "phone_number": "818-437-3241",
+    "job_role": "CEO",
+    "work_location": "47681 Beth Circle\nEast Jessicabury, ME 57883",
+    "boss": null,
+    "subordinates": []
+  },
+  {
+    "id": 19,
+    "name": "Willie Romero",
+    "phone_number": "9198998782",
+    "job_role": "Sales",
+    "work_location": "794 Baker Expressway\nLake Kelly, WV 67943",
+    "boss": "Michael Harris",
+    "subordinates": null
+  }
+]

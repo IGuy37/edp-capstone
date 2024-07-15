@@ -19,8 +19,7 @@ export default function App() {
 
   return (
     <Router>
-      <Navbar fixed="top"/>
-      <Search setEmployee={setEmployee}/>
+      <Navbar fixed="top" setEmployee={setEmployee}/>
       <Routes>
         <Route exact path="/" element={
           <Home />

@@ -49,6 +49,7 @@ app.post('/api/search', async (req, res) => {
         console.log(req.body);
         const result = await collection.find(req.body).toArray();
         console.log(result);
+        //TODO: Obfuscate salary if user is unauthorized to see it
         res.json(result);
     } catch (err) {
         console.error("Error:", err);

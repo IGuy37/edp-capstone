@@ -1,11 +1,7 @@
 import pandas as pd 
 import pickle
-import pyarrow.parquet as pq
 from flask import Flask, jsonify, request
-import joblib
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 MODEL_FILENAME = "model.pkl"

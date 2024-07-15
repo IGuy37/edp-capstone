@@ -74,6 +74,15 @@ app.post('/api/prediction', async (req, res) => {
     }
 });
 
+app.post('/api/login', async (req, res) => {
+    try{
+        res.json(req)
+    } catch (err) {
+        console.error("Error:", err);
+        res.status(500).send("Can't login right now.");
+    }
+})
+
 
 app.put('/api/register', async (req, res) => {
     try{

@@ -11,27 +11,11 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import Login from './components/Login';
 
 export default function App() {
 
   const [employee, setEmployee] = useState({})
-    
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(`${import.meta.env.VITE_API_URL}`);
-  //       if (!response.ok) {
-  //         throw new Error('Data could not be fetched!');
-  //       }
-  //       const json_response = await response.json();
-  //       setPrediction(json_response);
-  //     } catch (error) {
-  //       console.error('Error fetching employees:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   return (
     <Router>
@@ -43,6 +27,9 @@ export default function App() {
         }/>
         <Route path="/employee" element={
           <Employee data={employee}/>
+        }/>
+        <Route path="/login" element={
+          <Login />
         }/>
       </Routes>
     </Router>

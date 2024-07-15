@@ -31,30 +31,3 @@ with open(filename, 'wb') as file:
 filename = "header_columns.pkl"
 with open(filename, 'wb') as file:
     pickle.dump(X.columns, file)
-
-new_data = pd.DataFrame([['Software Engineer','Hartford']],columns=['job_role','location'])
-new_data_encoded = pd.get_dummies(new_data)
-
-missing_cols =set(X.columns) -set(new_data_encoded.columns)
-for col in missing_cols:
-    new_data_encoded[col]=0
-
-new_data_encoded = new_data_encoded[X.columns]
-
-# predict_salary = model.predict(new_data_encoded)
-
-# print(predict_salary)
-
-
-
-
-
-#df = pd.DataFrame([['CEO','Hartford']],columns=['job_role','location'])
-#preds = model.predict(df)
-#print(preds)
-#print(df)
-
-
-
-
-

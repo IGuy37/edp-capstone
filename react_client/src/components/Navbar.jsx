@@ -8,12 +8,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Search from './Search';
 
 
-function Navbar_1(props) {
+export default function Navbar_1(props) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand href="/" >
-          <img src="/src/assets/logo.png"></img>
+          <img className = "img-responsive" src="/src/assets/logo.png"></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -32,5 +32,3 @@ function Navbar_1(props) {
     </Navbar>
   );
 }
-
-export default Navbar_1;

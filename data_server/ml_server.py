@@ -26,14 +26,23 @@ def predict():
     data = request.get_json()
     print(data)
     #print(X_columns)
-    df = pd.DataFrame([[data['job_role'], data['location']]],columns=['job_role','location'])
+    df = pd.DataFrame(0, index=[0], columns=X_columns)
+    
+    #TODO: Make it not ignore location/job_role if not found somehow
+    job_role_col_name = 'job_role_' + data['job_role']
+    if job_role_col_name in X_columns:
+        df[job_role_col_name] = 1
+    
+    location_col_name = 'location_' + data['location']
+    if location_col_name in X_columns:
+        df[location_col_name] = 1
     #print(df)
-    X_test = pd.get_dummies(df)#[['job_role','location']])
-    X_test = X_test[X_columns]
+    #X_test = pd.get_dummies(df)#[['job_role','location']])
+    # X_test = X_test[X_columns]
     # missing_cols =set(X_columns) -set(X_test.columns)
     # for col in missing_cols:
     #     X_test[col]=0
-    prediction =  model.predict(X_test)
+    prediction =  model.predict(df)
     print(prediction)
     return jsonify({"salary" : prediction[0]})
 

@@ -30,7 +30,7 @@ with open(filename, 'wb') as file:
 
 filename = "header_columns.pkl"
 with open(filename, 'wb') as file:
-    pickle.dump(dataframe.columns, file)
+    pickle.dump(X.columns, file)
 
 new_data = pd.DataFrame([['Software Engineer','Hartford']],columns=['job_role','location'])
 new_data_encoded = pd.get_dummies(new_data)

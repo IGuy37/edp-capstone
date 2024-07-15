@@ -17,7 +17,7 @@ export default function Search(props){
         .then((response) => response.json())
         .then((data) => {
             // Handle the response data
-            props.setEmployee(data[0]);
+            props.setEmployee(data);
             console.log(data);
         })
         .catch((error) => {

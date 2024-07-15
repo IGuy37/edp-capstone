@@ -8,10 +8,10 @@ export default function LoginForm() {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-        fetch(`${import.meta.env.VITE_API_URL}/search`, {
+        fetch(`${import.meta.env.VITE_API_URL}/login`, {
             method: "POST",
             body: JSON.stringify({
-                "username": username,
+                "name": username,
                 "password": password
             }),
             headers: {
@@ -37,7 +37,7 @@ export default function LoginForm() {
         <div className="container">
             <form onSubmit={handleLogin} className="mt-5">
                 <div className="form-group">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Name</label>
                     <input
                         type="text"
                         className="form-control"

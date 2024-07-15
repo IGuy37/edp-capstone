@@ -34,16 +34,16 @@ export default function Register(props){
         .then((response) => response.json())
         .then((data) => {
             // TODO: Handle the response data
-            if(data.ok){
-                alert(data.message);
-                navigate('/employee');
+            if(data){
+                alert("Registered Successfully! Please log in using the credentials you just made.")
+                navigate('/login');
             }
-        })
+    })        
         .catch((error) => {
             // Handle any errors
             console.error(error);
         });
-        console.log("Login sent successfully");
+        console.log("Registration sent successfully");
         
     };
 

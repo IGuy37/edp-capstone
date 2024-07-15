@@ -2,9 +2,7 @@ import { useState , useEffect} from 'react';
 import './index.css';
 import "./App.css"
 import Employee from './components/Employee';
-import Search from './components/Search';
 import Register from './components/Register'
-import Home from './components/Home';
 import Navbar from './components/Navbar';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -24,7 +22,7 @@ export default function App() {
       <Navbar fixed="top" setEmployee={setEmployee}/>
       <Routes>
         <Route exact path="/" element={
-          <Home />
+          <Login />
         }/>
         <Route path="/employee" element={
           <Employee data={employee}/>

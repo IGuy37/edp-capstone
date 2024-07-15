@@ -17,6 +17,13 @@ Navbar.css
  margin: 1rem;
 }
 
+.img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
+}
+
 .nav__logo {
  color: var(--first-color);
  transition: color 0.4s;

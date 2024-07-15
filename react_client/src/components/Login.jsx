@@ -22,6 +22,7 @@ export default function LoginForm() {
         .then((data) => {
             // TODO: Handle the response data
             if(data.ok){
+                alert(data.message);
                 navigate('/employee');
             }
         })

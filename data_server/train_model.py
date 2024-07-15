@@ -41,9 +41,9 @@ for col in missing_cols:
 
 new_data_encoded = new_data_encoded[X.columns]
 
-predict_salary = model.predict(new_data_encoded)
+# predict_salary = model.predict(new_data_encoded)
 
-print(predict_salary)
+# print(predict_salary)
 
 
 

@@ -58,10 +58,15 @@ app.post('/api/search', async (req, res) => {
 
 app.post('/api/prediction', async (req, res) => {
     try {
+        console.log(req.body)
         const ml_response = await fetch(`${flaskUrl}/predict`, {
-            "method" : "POST",
-            "body" : req.body
+            method : "POST",
+            body : JSON.stringify(req.body),
+            headers: {
+                "Content-Type": "application/json",
+            },
         });
+        console.log(ml_response)
         const json_response = await ml_response.json();
         res.json(json_response);
     } catch (err) {

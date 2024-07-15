@@ -27,7 +27,7 @@ def predict():
     print(data)
     #print(X_columns)
     df = pd.DataFrame(0, index=[0], columns=X_columns)
-    
+
     #TODO: Make it not ignore location/job_role if not found somehow
     job_role_col_name = 'job_role_' + data['job_role']
     if job_role_col_name in X_columns:
@@ -44,7 +44,7 @@ def predict():
     #     X_test[col]=0
     prediction =  model.predict(df)
     print(prediction)
-    return jsonify({"salary" : prediction[0]})
+    return jsonify({"salary" : round(prediction[0], 2)})
 
 
 def main():

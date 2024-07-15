@@ -7,7 +7,7 @@ export default function Prediction(props){
         fetch(`${import.meta.env.VITE_API_URL}/prediction`, {
             method: "POST",
             body: JSON.stringify({
-                job_title : props.job_title,
+                job_role : props.job_role,
                 location: props.location
             }),
             headers: {
@@ -28,8 +28,11 @@ export default function Prediction(props){
     }
     return(
         <>
-            <div>Predicted Salary: ${prediction}</div>
             <button onClick={predictSalary} disabled={!props.job_role}>Predict this employee's salary</button>
+            {
+                prediction !== "" && 
+                <div>Predicted Salary: ${prediction}</div>
+            }
         </>
     )
 }

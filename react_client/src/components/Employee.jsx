@@ -1,10 +1,16 @@
 import Prediction from "./Prediction";
 import Subordinate from "./Subordinate";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import profile from '../assets/profile-icon-png-898.png'
 
 export default function Employee(props){
     const employee = props.data;
     return (
         <>
+        <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={profile} />
+      <Card.Body>
             <div>Name: {employee.name}</div>
             <div>Phone Number: {employee.phone_number}</div>
             <div>Job Role: {employee.job_role}</div>
@@ -20,6 +26,9 @@ export default function Employee(props){
                 }
             </div>
             <Prediction job_role = {employee.job_role} location={employee.location}/>
+      </Card.Body>
+    </Card>
+            
         </>
     )
 }

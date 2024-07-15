@@ -3,6 +3,7 @@ import './index.css';
 import Employee from './components/Employee';
 import Search from './components/Search';
 import Home from './components/Home';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import {
   BrowserRouter as Router,

@@ -3,6 +3,7 @@ import './index.css';
 import Employee from './components/Employee';
 import Search from './components/Search';
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import {
@@ -34,6 +35,7 @@ export default function App() {
 
   return (
     <Router>
+      <Navbar fixed="top"/>
       <Search setEmployee={setEmployee}/>
       <Routes>
         <Route exact path="/" element={

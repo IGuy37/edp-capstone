@@ -1,5 +1,6 @@
 import { useState , useEffect} from 'react';
 import './index.css';
+import './App.css';
 import Employee from './components/Employee';
 import Search from './components/Search';
 import Home from './components/Home';

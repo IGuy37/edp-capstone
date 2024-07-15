@@ -27,6 +27,9 @@ const limiter = RateLimit({
   max: maxRequests, 
 });
 
+let currently_logged_in_user = null;
+let loggedInAsHR = false;
+
 // apply rate limiter to all requests
 app.use(limiter);
 
@@ -46,10 +49,30 @@ app.get('/api', async (req, res) => {
 
 app.post('/api/search', async (req, res) => {
     try{
+        if(!currently_logged_in_user){
+            res.status(401).send("Please log in to search for employees.");
+            return;
+        }
         console.log(req.body);
-        const result = await collection.find(req.body).toArray();
+        const resultArr = await collection.find(req.body).toArray();
+        if(resultArr.length <= 0){
+            res.status(404).send("User not found");
+            return;
+        }
+        const result = resultArr[0];
         console.log(result);
-        //TODO: Obfuscate salary if user is unauthorized to see it
+        //Obfuscate salary if user is unauthorized to see it
+        const isBossOfLoggedInUser = !!result.boss && 
+            (result.boss.toLowerCase() === currently_logged_in_user.toLowerCase());
+        console.log(currently_logged_in_user)
+        if (!isBossOfLoggedInUser &&
+            !loggedInAsHR  &&
+            result.name.toLowerCase() !== currently_logged_in_user.toLowerCase())
+        {
+            result.salary = "*****";
+        }
+        console.log(result)
+        
         res.json(result);
     } catch (err) {
         console.error("Error:", err);
@@ -76,7 +99,20 @@ app.post('/api/prediction', async (req, res) => {
 
 app.post('/api/login', async (req, res) => {
     try{
-        res.json(req)
+        const {name, password} = req.body;
+        //console.log(req.body)
+        const result = await collection.find({name: name, password: password}).toArray();
+        if(result.length <= 0){
+            res.status(401).send("Incorrect username or password. Please try again.");
+            return;
+        }
+        //console.log(result)
+        loggedInAsHR = result[0].job_role.toUpperCase() === 'HR';
+        currently_logged_in_user = name;
+        res.json({
+            ok: true,
+            message: `Successfully logged in as ${currently_logged_in_user}`
+        })
     } catch (err) {
         console.error("Error:", err);
         res.status(500).send("Can't login right now.");
@@ -86,6 +122,10 @@ app.post('/api/login', async (req, res) => {
 
 app.put('/api/register', async (req, res) => {
     try{
+        if(!req.name || !req.password){
+            res.status(403).send("Please provide a name and password.");
+            return;
+        }
         const result = await collection.insertOne(req.body);
         console.log(`New document created with _id: ${result.insertedId}`);
         res.json(result)

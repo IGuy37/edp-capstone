@@ -23,8 +23,8 @@ export default function Search(props){
         .catch((error) => {
             // Handle any errors
             console.error(error);
-        });e.preventDefault();
-            console.log('Search submitted');
+        });
+        console.log('Search submitted');
     };
 
     const handleChange = (e) => {

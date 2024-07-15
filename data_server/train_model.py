@@ -1,9 +1,5 @@
 import pandas as pd 
-import numpy as np
-import matplotlib.pyplot as plt
 import pickle
-from sklearn.metrics import accuracy_score
-from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 import json
@@ -30,8 +26,3 @@ with open(filename, 'wb') as file:
 filename = "header_columns.pkl"
 with open(filename, 'wb') as file:
     pickle.dump(X.columns, file)
-
-
-
-
-

@@ -123,8 +123,10 @@ app.post('/api/login', async (req, res) => {
 
 app.put('/api/register', async (req, res) => {
     try{
-        if(!req.name || !req.password){
+        console.log("trying to register")
+        if(!req.body.name || !req.body.password){
             res.status(403).send("Please provide a name and password.");
+            console.log(req)
             return;
         }
         const result = await collection.insertOne(req.body);

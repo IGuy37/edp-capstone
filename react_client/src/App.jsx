@@ -9,7 +9,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import LoginForm from './components/LoginForm';
+import Login from './components/Login';
 
 export default function App() {
 
@@ -26,7 +26,7 @@ export default function App() {
           <Employee data={employee}/>
         }/>
         <Route path="/login" element={
-          <LoginForm />
+          <Login />
         }/>
       </Routes>
     </Router>

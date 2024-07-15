@@ -29,7 +29,7 @@ export default function Prediction(props){
     return(
         <>
             <div>Predicted Salary: ${prediction}</div>
-            <button onClick={predictSalary}>Predict this employee's salary</button>
+            <button onClick={predictSalary} disabled={!props.job_role}>Predict this employee's salary</button>
         </>
     )
 }

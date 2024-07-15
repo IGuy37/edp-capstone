@@ -49,10 +49,10 @@ app.get('/api', async (req, res) => {
 
 app.post('/api/search', async (req, res) => {
     try{
-        if(!currently_logged_in_user){
-            res.status(401).send("Please log in to search for employees.");
-            return;
-        }
+  //     if(!currently_logged_in_user){
+  //         res.status(401).send("Please log in to search for employees.");
+  //          return;
+//}
         console.log(req.body);
         const resultArr = await collection.find(req.body).toArray();
         if(resultArr.length <= 0){
@@ -61,6 +61,7 @@ app.post('/api/search', async (req, res) => {
         }
         const result = resultArr[0];
         console.log(result);
+        currently_logged_in_user = result.name
         //Obfuscate salary if user is unauthorized to see it
         const isBossOfLoggedInUser = !!result.boss && 
             (result.boss.toLowerCase() === currently_logged_in_user.toLowerCase());

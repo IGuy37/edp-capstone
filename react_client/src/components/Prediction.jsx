@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Button from 'react-bootstrap/Button';
 
 export default function Prediction(props){
     const [prediction, setPrediction] = useState("")
@@ -28,7 +29,7 @@ export default function Prediction(props){
     }
     return(
         <>
-            <button onClick={predictSalary} disabled={!props.job_role}>Predict this employee's salary</button>
+            <Button onClick={predictSalary} disabled={!props.job_role}>Predict salary</Button>
             {
                 prediction !== "" && 
                 <div>Predicted Salary: ${prediction}</div>

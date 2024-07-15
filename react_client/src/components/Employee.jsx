@@ -11,7 +11,7 @@ export default function Employee(props){
         <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={profile} />
       <Card.Body>
-            <div>Name: {employee.name}</div>
+      <Card.Title>{employee.name}</Card.Title>
             <div>Phone Number: {employee.phone_number}</div>
             <div>Job Role: {employee.job_role}</div>
             <div>Work Location: {employee.location}</div>                

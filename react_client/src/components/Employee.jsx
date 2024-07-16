@@ -15,13 +15,12 @@ export default function Employee(props){
             <div>Job Role: {employee.job_role}</div>
             <div>Work Location: {employee.location}</div>                
             <div>Salary: ${employee.salary}</div>
-            {
-                employee.boss &&
-                <div>
-                    Boss:&nbsp;
+            <div>Boss:&nbsp;
+                {
+                    (!employee.boss) ? "None" :
                     <Subordinate name={employee.boss} setEmployee={props.setEmployee} />
-                </div>
-            }
+                }
+            </div>
             <div>Subordinates:&nbsp; 
                 {
                     (!employee.subordinates) ? "None" :

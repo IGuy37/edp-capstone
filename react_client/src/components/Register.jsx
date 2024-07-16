@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-export default function Register(props){
+export default function Register(){
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -56,7 +56,7 @@ export default function Register(props){
                         type="text"
                         className="form-control"
                         id="username"
-                        placeholder="Enter name"
+                        placeholder="Enter Full Name"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
@@ -130,7 +130,7 @@ export default function Register(props){
                 <button type="submit" className="btn btn-primary">Register</button>
             </form>
             <span>
-                Already have an account?
+                Already have an account?&nbsp;
                 <Link to="/login">Log in!</Link>
             </span>
         </div>

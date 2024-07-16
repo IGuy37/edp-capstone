@@ -1,8 +1,7 @@
 import Prediction from "./Prediction";
 import Subordinate from "./Subordinate";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import profile from '../assets/profile-icon-png-898.png'
+import profile from '../assets/profile-icon.png'
 
 export default function Employee(props){
     const employee = props.data;

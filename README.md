@@ -26,16 +26,16 @@ By completing this capstone project, we:
 Ensure NPM, mongoDB, and Python are installed. If needed, also install `pandas` and `scikit-learn` using the Python package manager of your choice. To initialize dependencies in the Node.js server and React client, run `npm install` in their respective directories.
 
 In your React client and Node.js server, create `.env` files. In the Node server's `.env` file, create the following environment variables:
-
+```
 ML_SERVER_URL = #URL to your running Flask application
 MONGO_DB = #Name of your mongoDB database
 MONGO_DB_URL = #The URL to your running mongoDB server
 MONGO_DB_COLLECTION = #The name of your mongoDB collection
-
+```
 In the React Client's `.env` file, create the following environment variable:
-
+```
 VITE_API_URL = #URL to your running Node server, plus "/api" at the end
-
+```
 To run the Flask server, run in a terminal:
 ```bash
 cd data_server

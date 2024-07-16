@@ -43,7 +43,7 @@ export default function LoginForm() {
                         type="text"
                         className="form-control"
                         id="username"
-                        placeholder="Enter username"
+                        placeholder="Enter Full Name"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
@@ -62,7 +62,7 @@ export default function LoginForm() {
                 <button type="submit" className="btn btn-primary">Login</button>
             </form>
             <span>
-                Don't have an account? 
+                Don't have an account?&nbsp; 
                 <Link to="/register">Register!</Link>
             </span>
         </div>

@@ -25,7 +25,7 @@ export default function App() {
           <Login />
         }/>
         <Route path="/employee" element={
-          <Employee data={employee}/>
+          <Employee data={employee} setEmployee={setEmployee}/>
         }/>
         <Route path="/login" element={
           <Login />

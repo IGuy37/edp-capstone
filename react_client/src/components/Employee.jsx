@@ -8,7 +8,14 @@ export default function Employee(props){
     const employee = props.data;
     return (
         <>
-        <Card style={{ width: '18rem' }}>
+        <div style={{ 
+            display: 'grid', 
+            placeItems: 'center', 
+            height: '100vh', 
+        }}> 
+        <Card style={{ display: 'grid', 
+            placeItems: 'center', 
+            width: '18rem' }}>
       <Card.Img variant="top" src={profile} />
       <Card.Body>
       <Card.Title>{employee.name}</Card.Title>
@@ -28,7 +35,7 @@ export default function Employee(props){
             <Prediction job_role = {employee.job_role} location={employee.location}/>
       </Card.Body>
     </Card>
-            
+    </div>      
         </>
     )
 }

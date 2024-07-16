@@ -18,7 +18,7 @@ export default function Navbar_1(props) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="nav"
             style={{ maxHeight: '100px',maxWidth:'100%' }}
             navbarScroll
           >

@@ -3,6 +3,8 @@ import { promises as fs } from 'fs';
 import { MongoClient, ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import helmet from 'helmet';
+import csurf from 'csurf';
 import RateLimit from 'express-rate-limit';
 
 dotenv.config();
@@ -34,6 +36,8 @@ let loggedInAsHR = false;
 app.use(limiter);
 
 app.use(express.json());
+app.use(csurf({ cookie: true }));
+app.use(helmet());
 app.use(cors());
 
 app.get('/api', async (req, res) => {
@@ -54,7 +58,7 @@ app.post('/api/search', async (req, res) => {
            return;
         }
         console.log(req.body);
-        const resultArr = await collection.find(req.body).toArray();
+        const resultArr = await collection.find({name: {$eq: req.body.name}}).toArray();
         if(resultArr.length <= 0){
             res.status(404).send("User not found");
             return;
@@ -102,7 +106,7 @@ app.post('/api/login', async (req, res) => {
     try{
         const {name, password} = req.body;
         //console.log(req.body)
-        const result = await collection.find({name: name, password: password}).toArray();
+        const result = await collection.find({name: {$eq: name}, password: {$eq: password}}).toArray();
         if(result.length <= 0){
             res.status(401).send("Incorrect username or password. Please try again.");
             return;

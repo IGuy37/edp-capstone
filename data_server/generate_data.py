@@ -18,7 +18,7 @@ def generate_data():
 
     job_roles = ['Software Engineer', 'CyberSecurity Engineer', 'Manager', 'Sales','HR','CEO']
     JSON_FILENAME = "employee_data.json"
-    employee_data = []
+    dummy_employee_data = []
     for id in range(20):
         job_role = random.choice(job_roles)
         is_manager = job_role == 'Manager'
@@ -31,20 +31,21 @@ def generate_data():
             'job_role':job_role,
             'location':fake.city(),
             'salary': random.randint(60000, 100000),
-            'boss': None if is_ceo else random.choice(employee_data)['name'] if employee_data else None,
-            'subordinates':[] if is_manager or is_ceo else None
+            'boss': None if is_ceo else random.choice(dummy_employee_data)['name'] if dummy_employee_data else None,
+            'subordinates':[] if is_manager or is_ceo else None,
+            'password':fake.password()
         }
-        employee_data.append(employee)
+        dummy_employee_data.append(employee)
 
-    for employee in employee_data:
+    for employee in dummy_employee_data:
         if employee['job_role'] == 'Manager':
-            for emp in employee_data:
+            for emp in dummy_employee_data:
                 if emp['boss'] == employee['name']:
                     employee['subordinates'].append(emp['name'])
 
-    formatted_data = json.dumps(employee_data, indent=2)
+    formatted_dummy_data = json.dumps(dummy_employee_data, indent=2)
     with(open(JSON_FILENAME, 'w')) as file:
-        file.write(formatted_data)
+        file.write(formatted_dummy_data)
 
     print("Successful")
     # client.close()

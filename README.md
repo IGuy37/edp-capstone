@@ -31,6 +31,7 @@ ML_SERVER_URL = #URL to your running Flask application
 MONGO_DB = #Name of your mongoDB database
 MONGO_DB_URL = #The URL to your running mongoDB server
 MONGO_DB_COLLECTION = #The name of your mongoDB collection
+REACT_CLIENT_URL = #URL of your React client
 ```
 In the React Client's `.env` file, create the following environment variable:
 ```

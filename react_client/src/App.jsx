@@ -17,6 +17,11 @@ export default function App() {
 
   const [employee, setEmployee] = useState({})
 
+  useEffect(() => {
+    async function getCSRFToken(){
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/getCSRFToken`)
+    }
+  },[])
   return (
     <Router>
       <Navbar fixed="top" setEmployee={setEmployee}/>

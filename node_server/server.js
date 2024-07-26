@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
 import csurf from 'csurf';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser'
 import RateLimit from 'express-rate-limit';
 
 dotenv.config();
@@ -35,10 +37,13 @@ let loggedInAsHR = false;
 // apply rate limiter to all requests
 app.use(limiter);
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser());
 app.use(express.json());
-app.use(csurf({ cookie: true }));
-app.use(helmet());
-app.use(cors());
+//app.use(csurf({ cookie: true }));
+app.disable("x-powered-by");
+app.use(helmet({xPoweredBy: false}));
+app.use(cors({origin: process.env.REACT_CLIENT_URL}));
 
 app.get('/api', async (req, res) => {
     try {
@@ -50,6 +55,10 @@ app.get('/api', async (req, res) => {
         res.status(500).send("Can't connect to ML server");
     }
 });
+
+app.get('/api/getCSRFToken', async (req, res) => {
+    res.json({CSRFToken: req.csrfToken()})
+})
 
 app.post('/api/search', async (req, res) => {
     try{

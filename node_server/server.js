@@ -73,6 +73,7 @@ app.post('/api/search', async (req, res) => {
             return;
         }
         const result = resultArr[0];
+        delete result.password;
         console.log(result);
         //currently_logged_in_user = result.name
         //Obfuscate salary if user is unauthorized to see it
